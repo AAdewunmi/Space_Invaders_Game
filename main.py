@@ -12,3 +12,6 @@
 #               https://github.com/attreyabhatt/Space-Invaders-Pygame
 
 import pygame
+
+# Initialize Pygame
+pygame.init()
