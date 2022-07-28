@@ -10,3 +10,5 @@
 #             It also contains the game over screen.
 # Adapted from: https://www.youtube.com/watch?v=FfWpgLFMI7w
 #               https://github.com/attreyabhatt/Space-Invaders-Pygame
+
+import pygame
