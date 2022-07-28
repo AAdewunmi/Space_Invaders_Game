@@ -20,3 +20,11 @@ pygame.init()
 screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
+
+# Quit the game if the user clicks the close button (GAME OVER)
+app_running = True
+while app_running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            app_running = False
+
