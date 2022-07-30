@@ -28,3 +28,5 @@ while app_running:
         if event.type == pygame.QUIT:
             app_running = False
 
+# Changing the Title, Logo, and Background Color
+
