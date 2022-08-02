@@ -26,11 +26,12 @@ pygame.display.set_caption('Space Invaders')
 icon = pygame.image.load('images/ufo.png')
 pygame.display.set_icon(icon)
 
-# Quit the game if the user clicks the close button (GAME OVER)
+# Logic for running the game
 app_running = True
 while app_running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             app_running = False
-
-
+    # Change the background color
+    screen.fill((255, 0, 0))
+    pygame.display.update()
