@@ -23,7 +23,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 
 # Changing the Title and Icon of the Game
 pygame.display.set_caption('Space Invaders')
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('images/ufo.png')
 pygame.display.set_icon(icon)
 
 # Quit the game if the user clicks the close button (GAME OVER)
