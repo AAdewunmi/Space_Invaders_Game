@@ -28,22 +28,26 @@ pygame.display.set_icon(icon)
 
 # Adding Player Image Into The Game
 player_img = pygame.image.load('images/player.png')
+# Player Image Position
 playerX = 370
 playerY = 480
 
 
-def player():
-    screen.blit(player_img, (playerX, playerY))
+# Function to draw the player on the screen
+def player(x, y):
+    screen.blit(player_img, (x, y))
 
 
 # Logic for running the game
 app_running = True
 while app_running:
     # Change the background color
-    screen.fill((255, 0, 0))
+    screen.fill((0, 0, 0))
+    # Move the playerX to the right
+    playerX += 0.5
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             app_running = False
     # Draw the player on the screen
-    player()
+    player(playerX, playerY)
     pygame.display.update()
