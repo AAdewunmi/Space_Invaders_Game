@@ -35,3 +35,5 @@ while app_running:
     # Change the background color
     screen.fill((255, 0, 0))
     pygame.display.update()
+
+# Adding Images Into The Game
