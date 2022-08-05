@@ -10,6 +10,7 @@
 #             It also contains the game over screen.
 # Adapted from: https://www.youtube.com/watch?v=FfWpgLFMI7w
 #               https://github.com/attreyabhatt/Space-Invaders-Pygame
+import random
 
 import pygame
 
@@ -33,11 +34,22 @@ playerX = 370
 playerY = 480
 playerX_change = 0
 
+# Adding Enemy Image Into The Game
+enemy_img = pygame.image.load('images/enemy.png')
+# Enemy Image Position
+enemyX = random.randint(0, 736)
+enemyY = random.randint(0, 150)
+enemyX_change = random.randint(0, 5)
+
 
 # Function to draw the player on the screen
 def player(x, y):
     screen.blit(player_img, (x, y))
 
+
+# Function to draw the enemy on the screen
+def enemy(x, y):
+    screen.blit(enemy_img, (x, y))
 
 # Logic for running the game
 app_running = True
@@ -69,4 +81,5 @@ while app_running:
         playerX = 736
     # Draw the player on the screen
     player(playerX, playerY)
+    enemy(enemyX, enemyY)
     pygame.display.update()
