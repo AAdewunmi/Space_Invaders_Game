@@ -31,6 +31,7 @@ player_img = pygame.image.load('images/player.png')
 # Player Image Position
 playerX = 370
 playerY = 480
+playerX_change = 0
 
 
 # Function to draw the player on the screen
@@ -47,13 +48,25 @@ while app_running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             app_running = False
+        # Player Movement
         # Keyboard Input
-        # If the keystroke is pressed, the player will move left or right
+        # If the keystroke is pressed down, the player will move left or right
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                print('Left Arrow Pressed')
+                playerX_change = -2.5
             if event.key == pygame.K_RIGHT:
-                print('Right Arrow Pressed')
+                playerX_change = 2.5
+        # If the keystroke is released, the player will stop moving
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                playerX_change = 0
+    # PlayerX Movement
+    playerX += playerX_change
+    # Player Boundaries
+    if playerX <= 0:
+        playerX = 0
+    elif playerX >= 736:
+        playerX = 736
     # Draw the player on the screen
     player(playerX, playerY)
     pygame.display.update()
