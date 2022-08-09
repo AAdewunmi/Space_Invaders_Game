@@ -27,6 +27,9 @@ pygame.display.set_caption('Space Invaders')
 icon = pygame.image.load('images/ufo.png')
 pygame.display.set_icon(icon)
 
+# Set Background Image
+background = pygame.image.load('images/background.png')
+
 # Adding Player Image Into The Game
 player_img = pygame.image.load('images/player.png')
 # Player Image Position
@@ -58,7 +61,8 @@ app_running = True
 while app_running:
     # Change the background color
     screen.fill((0, 0, 0))
-
+    # Draw the background image
+    screen.blit(background, (0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             app_running = False
@@ -85,10 +89,10 @@ while app_running:
     enemyX += enemyX_change
     # Enemy Boundaries
     if enemyX <= 0:
-        enemyX_change = 2
+        enemyX_change = 1.5
         enemyY += enemyY_change
     elif enemyX >= 736:
-        enemyX_change = -2
+        enemyX_change = -1.5
         enemyY += enemyY_change
     # Draw the player on the screen
     player(playerX, playerY)
