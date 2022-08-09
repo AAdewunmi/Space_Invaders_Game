@@ -45,6 +45,16 @@ enemyY = random.randint(0, 150)
 enemyX_change = random.randint(0, 5)
 enemyY_change = random.randint(0, 50)
 
+# Adding Bullet image into the Game
+bullet_img = pygame.image.load('images/bullet.png')
+# Bullet Image Position
+bulletX = 0
+bulletY = 480
+bulletX_change = 0
+bulletY_change = 10
+# Ready - You can't see the bullet on the screen
+bullet_state = 'ready'
+
 
 # Function to draw the player on the screen
 def player(x, y):
@@ -54,6 +64,14 @@ def player(x, y):
 # Function to draw the enemy on the screen
 def enemy(x, y):
     screen.blit(enemy_img, (x, y))
+
+
+# Function to draw the bullet on the screen
+def fire_bullet(x, y):
+    global bullet_state
+    # Fire - The bullet is currently moving
+    bullet_state = 'fire'
+    screen.blit(bullet_img, (x + 16, y + 10))
 
 
 # Logic for running the game
@@ -74,6 +92,9 @@ while app_running:
                 playerX_change = -2.5
             if event.key == pygame.K_RIGHT:
                 playerX_change = 2.5
+            # When space is pressed, the bullet will be fired
+            if event.key == pygame.K_SPACE:
+                fire_bullet(playerX, bulletY)
         # If the keystroke is released, the player will stop moving
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -94,6 +115,10 @@ while app_running:
     elif enemyX >= 736:
         enemyX_change = -1.5
         enemyY += enemyY_change
+    # Bullet Movement
+    if bullet_state == 'fire':
+        fire_bullet(playerX, bulletY)
+        bulletY -= bulletY_change
     # Draw the player on the screen
     player(playerX, playerY)
     enemy(enemyX, enemyY)
