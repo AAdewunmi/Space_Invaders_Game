@@ -95,9 +95,10 @@ while app_running:
             # When space is pressed, the bullet will be fired
             if event.key == pygame.K_SPACE:
                 # If the bullet is ready, fire the bullet
-                # After the bullet is fired, it follows its own path, not following the player
-                bulletX = playerX
-                fire_bullet(bulletX, bulletY)
+                if bullet_state == 'ready':
+                    # After the bullet is fired, it follows its own path, not following the player
+                    bulletX = playerX
+                    fire_bullet(bulletX, bulletY)
         # If the keystroke is released, the player will stop moving
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
