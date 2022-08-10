@@ -115,6 +115,10 @@ while app_running:
     elif enemyX >= 736:
         enemyX_change = -1.5
         enemyY += enemyY_change
+    # Shoot multiple bullets
+    if bulletY <= 0:
+        bulletY = 480
+        bullet_state = 'ready'
     # Bullet Movement
     if bullet_state == 'fire':
         fire_bullet(playerX, bulletY)
