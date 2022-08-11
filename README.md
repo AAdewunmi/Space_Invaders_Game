@@ -1,6 +1,8 @@
-# Project Title:
+# Project Title: Space Invaders Game (WORK-IN-PROGRESS)
 
-Space Invaders Game
+- Screenshot:
+
+![Image description](images/screenshot.png)
 
 ## What is the project?
 
