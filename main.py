@@ -14,6 +14,7 @@ import random
 
 import pygame
 import math
+from pygame import mixer
 
 # Initialize Pygame
 pygame.init()
@@ -30,6 +31,10 @@ pygame.display.set_icon(icon)
 
 # Set Background Image
 background = pygame.image.load('images/background.png')
+
+# Set Background Music
+mixer.music.load('audio/background.wav')
+mixer.music.play(-1)
 
 # Adding Player Image Into The Game
 player_img = pygame.image.load('images/player.png')
