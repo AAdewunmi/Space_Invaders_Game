@@ -139,6 +139,9 @@ while app_running:
                 playerX_change = 2.5
             # When space is pressed, the bullet will be fired
             if event.key == pygame.K_SPACE:
+                # Add sound effect when bullet is fired
+                bullet_sound = mixer.Sound('audio/laser.wav')
+                bullet_sound.play()
                 # If the bullet is ready, fire the bullet
                 if bullet_state == 'ready':
                     # After the bullet is fired, it follows its own path, not following the player
