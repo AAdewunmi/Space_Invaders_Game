@@ -171,6 +171,9 @@ while app_running:
         # Collision Detection
         collision = is_collision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
+            # Add sound effect when enemy is hit
+            explosion_sound = mixer.Sound('audio/explosion.wav')
+            explosion_sound.play()
             bulletY = 480
             bullet_state = 'ready'
             score_value += 1
