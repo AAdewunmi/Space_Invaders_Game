@@ -85,11 +85,19 @@ font = pygame.font.Font('freesansbold.ttf', 32)
 textX = 10
 textY = 10
 
+over_font = pygame.font.Font('freesansbold.ttf', 64)
+
 
 # Show Score Function
 def show_score(x, y):
     score = font.render('Score: ' + str(score_value), True, (255, 255, 255))
     screen.blit(score, (x, y))
+
+
+# Show Game Over On Screen
+def game_over_text():
+    over_text = over_font.render('GAME - OVER!', True, (255, 255, 255))
+    screen.blit(over_text, (200, 250))
 
 
 # Function to draw the player on the screen
@@ -121,6 +129,7 @@ def is_collision(enemyX, enemyY, bulletX, bulletY):
 
 # Logic for running the game
 app_running = True
+
 while app_running:
     # Change the background color
     screen.fill((0, 0, 0))
@@ -160,6 +169,12 @@ while app_running:
         playerX = 736
     # Enemy Movement
     for i in range(num_of_enemies):
+        # Game Over
+        if enemyY[i] > 440:
+            for j in range(num_of_enemies):
+                enemyY[j] = 2000
+            game_over_text()
+            break
         enemyX[i] += enemyX_change[i]
         # Enemy Boundaries
         if enemyX[i] <= 0:
