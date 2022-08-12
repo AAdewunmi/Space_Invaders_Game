@@ -146,7 +146,8 @@ while app_running:
         bullet_state = 'ready'
         score += 1
         print(score)
-
+        enemyX = random.randint(0, 736)
+        enemyY = random.randint(0, 150)
 
     # Draw the player on the screen
     player(playerX, playerY)
