@@ -74,8 +74,17 @@ bulletX_change = 0
 bulletY_change = 10
 # Ready - You can't see the bullet on the screen
 bullet_state = 'ready'
-# Score variable
-score = 0
+# Show Score Variable
+score_value = 0
+font = pygame.font.Font('freesansbold.ttf', 32)
+textX = 10
+textY = 10
+
+
+# Show Score Function
+def show_score(x, y):
+    score = font.render('Score: ' + str(score_value), True, (255, 255, 255))
+    screen.blit(score, (x, y))
 
 
 # Function to draw the player on the screen
@@ -156,8 +165,7 @@ while app_running:
         if collision:
             bulletY = 480
             bullet_state = 'ready'
-            score += 1
-            print(score)
+            score_value += 1
             enemyX[i] = random.randint(0, 736)
             enemyY[i] = random.randint(0, 150)
         enemy(enemyX[i], enemyY[i], i)
@@ -171,8 +179,8 @@ while app_running:
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
 
-
     # Draw the player on the screen
     player(playerX, playerY)
-
+    # Draw the score on the screen
+    show_score(textX, textY)
     pygame.display.update()
