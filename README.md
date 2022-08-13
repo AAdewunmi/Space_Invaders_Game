@@ -1,32 +1,62 @@
-# Project Title: Space Invaders Game (WORK-IN-PROGRESS)
+# Project Title: Space Invaders Game 
 
-- Screenshot:
 
-![Image description](images/screenshot.png)
+## 1. What is the project?
 
-## What is the project?
+This project uses the Python Pygame library to create a Space Invader Game.
 
-The aim of this project is to use py game library to create a Space Invader Game.
 
-## Tech Stack / Dependencies
+## 2. Tech Stack / Dependencies:
 
 - Python 3
 
-- py game library
+- Pygame library
 
 URL: https://www.pygame.org/wiki/about
 
 - Pycharm IDE
 
-## What is the MVP?
 
-The minimal viable product is a game, where the users goal is to defeat wave after wave of descending aliens with a horizontally moving laser attached to a spaceship.
+## 3. Installing:
 
-## What are the sprinkles (Nice to haves)?
+1. Clone the repo.
 
-## When will the project be complete?
+```
+https://github.com/AAdewunmi/Space_Invaders_Game.git
+```
 
-The project will be complete once all the MVP features have been implemented and the game has been styled.
+2. Open Project Folder in Pycharm IDE.
+
+3. Explore!
+
+4. Open main.py and RUN ➤.
+
+5. Click the spacebar to fire bullets and the left / right arrow key to move the spaceship from left to right. The enemies move randomly!
+
+  Enjoy 😎
+
+
+## 4. Contibuting: 
+
+- I would advice you to open an issue first to discuss what you would like to change with the original creator of the project -> Attreya Bhatt!
+
+- Personally, I plan to propose the following changes to the game:
+
+👇 👇 👇
+
+At the end of the game, once a user presses the space bar, the score is reset to 0 and the game is reset to its original state.
+
+
+## 5. Screenshot:
+
+- Start Game
+
+![Image description](images/screenshot_1.png)
+
+- Start Over
+
+![Image description](images/screenshot_2.png)
+
 
 ## Adapted from:
 
