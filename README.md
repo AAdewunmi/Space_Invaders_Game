@@ -47,16 +47,9 @@ https://github.com/AAdewunmi/Space_Invaders_Game.git
 At the end of the game, once a user presses the space bar, the score is reset to 0 and the game is reset to its original state.
 
 
-## 5. Screenshot:
+## 5. Screen Recording:
 
-- Start Game
-
-![Image description](images/screenshot_1.png)
-
-- Start Over
-
-![Image description](images/screenshot_2.png)
-
+https://user-images.githubusercontent.com/15172744/191219769-fe766b1a-8d4d-4251-a9d0-91b6919f0beb.mp4
 
 ## Adapted from:
 
